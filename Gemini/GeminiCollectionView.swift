@@ -8,14 +8,14 @@
 
 import UIKit
 
-public final class GeminiCollectionView: UICollectionView {
+open class GeminiCollectionView: UICollectionView {
     public let gemini: Gemini = GeminiAnimationModel()
 
     private var animationModel: GeminiAnimationModel? {
         return gemini as? GeminiAnimationModel
     }
 
-    override public var collectionViewLayout: UICollectionViewLayout {
+    override open var collectionViewLayout: UICollectionViewLayout {
         didSet {
             updateScrollDirection(with: collectionViewLayout)
         }
@@ -31,12 +31,12 @@ public final class GeminiCollectionView: UICollectionView {
         updateScrollDirection(with: layout)
     }
 
-    override public func setCollectionViewLayout(_ layout: UICollectionViewLayout, animated: Bool) {
+    override open func setCollectionViewLayout(_ layout: UICollectionViewLayout, animated: Bool) {
         super.setCollectionViewLayout(layout, animated: animated)
         updateScrollDirection(with: layout)
     }
 
-    override public func setCollectionViewLayout(_ layout: UICollectionViewLayout, animated: Bool, completion: ((Bool) -> Swift.Void)? = nil) {
+    override open func setCollectionViewLayout(_ layout: UICollectionViewLayout, animated: Bool, completion: ((Bool) -> Swift.Void)? = nil) {
         super.setCollectionViewLayout(layout, animated: animated, completion: completion)
         updateScrollDirection(with: layout)
     }
